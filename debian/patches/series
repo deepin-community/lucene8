@@ -1,0 +1,4 @@
+0001-use-local-artifacts.patch
+0002-missing-hamcrest-dependency.patch
+0003-reproducible-manifest.patch
+fix_build.patch

@@ -1,0 +1,4 @@
+version=3
+opts="repack" \
+    https://archive.apache.org/dist/lucene/java/(8\..*)/ lucene-(8\..*)-src.tgz \
+    debian uupdate

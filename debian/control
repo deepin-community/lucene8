@@ -1,15 +1,51 @@
-Source: template-repository
-Section: unknown
+Source: lucene8
+Section: java
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders: Sudip Mukherjee <sudipm.mukherjee@gmail.com>
+Build-Depends:
+ debhelper-compat (= 13),
+ default-jdk,
+ ivy-debian-helper,
+ javacc5,
+ maven-repo-helper,
+ groovy
+Build-Depends-Indep:
+ antlr3,
+ libasm-java,
+ libcarrotsearch-hppc-java,
+ libcarrotsearch-randomizedtesting-java,
+ libcommons-codec-java,
+ libcommons-compress-java,
+ libcommons-logging-java,
+ libhttpclient-java,
+ libhttpcore-java,
+ libicu4j-java,
+ libjetty9-java,
+ libmorfologik-stemming2-java,
+ libnekohtml-java,
+ libregexp-java,
+ libservlet-api-java,
+ libspatial4j-0.4-java,
+ libuima-addons-java,
+ libuima-core-java,
+ libxerces2-java,
+ libhamcrest-java,
+ libapache-opennlp-java,
+ libspatial4j-java,
+ libjts-java,
+ liblog4j2-java,
+ libs2-geometry-library-java
+Standards-Version: 4.7.0
+Vcs-Git: https://salsa.debian.org/java-team/lucene8.git
+Vcs-Browser: https://salsa.debian.org/java-team/lucene8
+Homepage: http://lucene.apache.org
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: liblucene8-java
+Architecture: all
+Depends: libregexp-java, ${misc:Depends}
+Conflicts: liblucene4.10-java
+Description: Full-text search engine library for Java(TM)
+ Lucene is a full-text search engine for the Java(TM) programming language.
+ Lucene is not a complete application, but rather a code library and API
+ that can easily be used to add search capabilities to applications.

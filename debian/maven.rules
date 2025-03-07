@@ -1,0 +1,8 @@
+junit junit * s/.*/4.x/ * *
+org.antlr antlr-runtime * s/.*/3.x/ * *
+s/org.eclipse.jetty.orbit/javax.servlet/ s/javax.servlet/javax.servlet-api/ * s/.*/debian/ * *
+com.spatial4j spatial4j * s/.*/0.4.x/ * *
+javax.servlet s/servlet-api/javax.servlet-api/ * s/.*/debian/ * *
+net.java.dev.javacc javacc * s/.*/5.x/ * *
+org.apache.lucene * * s/.*/8.x/ * *
+org.eclipse.jetty jetty-* * s/.*/9.x/ * *

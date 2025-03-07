@@ -1,0 +1,17 @@
+Description: Do not override the default settings from ivy-debian-helper
+Author: Emmanuel Bourg <ebourg@apache.org>
+Forwarded: not-needed
+
+--
+diff --git a/common-build.xml b/common-build.xml
+index fc2442a..96e15c0 100644
+--- a/common-build.xml
++++ b/common-build.xml
+@@ -443,7 +443,6 @@
+           you have an idea, fix it.
+           unless="ivy.settings.uptodate" -->
+     <!-- override: just for safety, should be unnecessary -->
+-    <ivy:configure file="${common.dir}/top-level-ivy-settings.xml" override="true"/>
+     <!-- <property name="ivy.settings.uptodate" value="true"/> -->
+   </target>
+ 

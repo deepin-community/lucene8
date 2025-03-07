@@ -1,5 +1,65 @@
-template-repository (1.0-1) unstable; urgency=medium
+lucene8 (8.8.1-5) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
+  * Make the manifest reproducible (Closes: #1035400)
+  * Standards-Version updated to 4.7.0
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 05 Aug 2024 15:12:16 +0200
+
+lucene8 (8.8.1-4) unstable; urgency=medium
+
+  * Team upload.
+  * Fix FTBFS due to JARs not being present for all hamcrest artifacts
+    (Closes: #1022323).
+
+ -- Andrius Merkys <merkys@debian.org>  Fri, 25 Nov 2022 08:00:25 -0500
+
+lucene8 (8.8.1-3) unstable; urgency=medium
+
+  * Fixed the build failure with OpenJDK 17 (Closes: #1011606)
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Sat, 28 May 2022 09:14:17 +0200
+
+lucene8 (8.8.1-2) unstable; urgency=medium
+
+  * Team upload.
+  * Build with javacc5
+  * Standards-Version updated to 4.6.1
+  * Depend on libservlet-api-java instead of libservlet3.1-java
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Sun, 15 May 2022 22:59:53 +0200
+
+lucene8 (8.8.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Sun, 28 Feb 2021 22:27:46 +0100
+
+lucene8 (8.7.0+dfsg-1) unstable; urgency=medium
+
+  * Fix watch file to repack with dfsg.
+  * New upstream version 8.7.0+dfsg.
+    - Update pom files from upstream.
+  * Update Standards-Version to 4.5.1
+
+ -- Sudip Mukherjee <sudipm.mukherjee@gmail.com>  Mon, 04 Jan 2021 21:35:48 +0000
+
+lucene8 (8.6.3+dfsg-3) unstable; urgency=medium
+
+  * Fix generic version.
+    - Thanks to Emmanuel Bourg for pointing it out.
+
+ -- Sudip Mukherjee <sudipm.mukherjee@gmail.com>  Tue, 10 Nov 2020 11:04:30 +0000
+
+lucene8 (8.6.3+dfsg-2) unstable; urgency=medium
+
+  * Source only upload.
+
+ -- Sudip Mukherjee <sudipm.mukherjee@gmail.com>  Mon, 09 Nov 2020 10:24:55 +0000
+
+lucene8 (8.6.3+dfsg-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #970738)
+
+ -- Sudip Mukherjee <sudipm.mukherjee@gmail.com>  Sat, 07 Nov 2020 23:57:53 +0000

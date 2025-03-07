@@ -1,0 +1,14 @@
+Description: Makes the manifest reproducible
+Author: Emmanuel Bourg <ebourg@apache.org>
+Forwarded: no
+--- a/common-build.xml
++++ b/common-build.xml
+@@ -793,7 +793,7 @@
+         <attribute name="Implementation-Title" value="@{implementation.title}"/>
+         <!-- impl version can be any string -->
+         <attribute name="Implementation-Version"
+-                   value="${version} ${checkoutid} - ${user.name} - ${DSTAMP} ${TSTAMP}"/>
++                   value="${version}"/>
+         <attribute name="Implementation-Vendor"
+                    value="The Apache Software Foundation"/>
+         <attribute name="X-Compile-Source-JDK" value="${javac.release}"/>
