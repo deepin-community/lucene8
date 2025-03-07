@@ -1,0 +1,28 @@
+Description: Add an explicit dependency on hamcrest to avoid a build failure in test-framework (why?)
+Author: Emmanuel Bourg <ebourg@apache.org>
+Forwarded: not-needed
+Bug-Debian: https://bugs.debian.org/822843
+
+--
+--- a/test-framework/ivy.xml
++++ b/test-framework/ivy.xml
+@@ -25,7 +25,7 @@
+ 
+   <dependencies>
+     <dependency org="junit" name="junit" rev="${/junit/junit}" conf="compile"/>
+-    <dependency org="org.hamcrest" name="hamcrest-core" rev="${/org.hamcrest/hamcrest-core}" conf="compile"/>
++    <dependency org="org.hamcrest" name="hamcrest" rev="${/org.hamcrest/hamcrest}" conf="compile"/>
+     <dependency org="com.carrotsearch.randomizedtesting" name="randomizedtesting-runner" rev="${/com.carrotsearch.randomizedtesting/randomizedtesting-runner}" conf="compile"/>
+ 
+     <exclude org="*" ext="*" matcher="regexp" type="${ivy.exclude.types}"/> 
+--- a/ivy-versions.properties
++++ b/ivy-versions.properties
+@@ -283,7 +283,7 @@
+ /org.gagravarr/vorbis-java-core = ${org.gagravarr.vorbis.java.version}
+ /org.gagravarr/vorbis-java-tika = ${org.gagravarr.vorbis.java.version}
+ 
+-/org.hamcrest/hamcrest-core = 1.3
++/org.hamcrest/hamcrest = 1.3
+ 
+ /org.hsqldb/hsqldb = 2.4.0
+ /org.jdom/jdom2 = 2.0.6

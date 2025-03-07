@@ -1,0 +1,35 @@
+Description: Fix dependency for Debian build
+
+Forwarded: not-needed
+
+---
+
+--- lucene8-8.6.3+dfsg.orig/analysis/morfologik/ivy.xml
++++ lucene8-8.6.3+dfsg/analysis/morfologik/ivy.xml
+@@ -25,7 +25,6 @@
+     <dependency org="org.carrot2" name="morfologik-polish" rev="${/org.carrot2/morfologik-polish}" conf="compile"/>
+     <dependency org="org.carrot2" name="morfologik-fsa" rev="${/org.carrot2/morfologik-fsa}" conf="compile"/>
+     <dependency org="org.carrot2" name="morfologik-stemming" rev="${/org.carrot2/morfologik-stemming}" conf="compile"/>
+-    <dependency org="ua.net.nlp" name="morfologik-ukrainian-search" rev="${/ua.net.nlp/morfologik-ukrainian-search}" conf="compile"/>
+     <exclude org="*" ext="*" matcher="regexp" type="${ivy.exclude.types}"/> 
+   </dependencies>
+ </ivy-module>
+--- lucene8-8.6.3+dfsg.orig/spatial-extras/ivy.xml
++++ lucene8-8.6.3+dfsg/spatial-extras/ivy.xml
+@@ -27,14 +27,10 @@
+ 
+     <dependency org="io.sgr" name="s2-geometry-library-java" rev="${/io.sgr/s2-geometry-library-java}" conf="compile"/>
+ 
+-    <dependency org="org.locationtech.spatial4j" name="spatial4j" rev="${/org.locationtech.spatial4j/spatial4j}" conf="test">
+-      <artifact name="spatial4j" type="test" ext="jar" maven:classifier="tests" />
+-    </dependency>
+-
+     <dependency org="org.locationtech.jts" name="jts-core" rev="${/org.locationtech.jts/jts-core}" conf="test" />
+ 
+     <dependency org="org.slf4j" name="slf4j-api" rev="${/org.slf4j/slf4j-api}" conf="test"/>
+ 
+     <exclude org="*" ext="*" matcher="regexp" type="${ivy.exclude.types}"/>
+   </dependencies>
+-</ivy-module>
+\ No newline at end of file
++</ivy-module>

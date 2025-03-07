@@ -1,4 +1,26 @@
 #!/usr/bin/make -f
 
+export VERSION=$(shell dpkg-parsechangelog -SVersion | sed -e 's,^\(.*:\)*\(.*\)+dfsg-.*,\2,')
+
+export DHOME = $(CURDIR)/debian/home/
+
 %:
-	dh $@
+	dh $@ --buildsystem=ivy --with maven-repo-helper
+
+override_dh_auto_build:
+	mkdir -p ${DHOME}/.ant/lib
+	dh_auto_build -- -buildfile queryparser/build.xml regenerate
+	dh_auto_build -- -Duser.home=${DHOME} -Dversion=$(VERSION) -Djavac.doclint.args=-Xdoclint:none jar
+
+override_dh_installchangelogs:
+	dh_installchangelogs CHANGES.txt
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf debian/_ivy
+	find -path \*/lib/\*.jar | xargs -r rm -f
+
+get-orig-pom:
+	for module in parent solr-grandparent analyzers-common analyzers-smartcn grouping benchmark core demo expressions queryparser analyzers-icu analyzers-stempel highlighter replicator analyzers-kuromoji backward-codecs join sandbox analyzers-morfologik classification luke spatial3d analyzers-nori codecs memory spatial-extras analyzers-opennlp expressions misc suggest analyzers-phonetic facet queries test-framework; do \
+		wget https://repo1.maven.org/maven2/org/apache/lucene/lucene-$$module/$(VERSION)/lucene-$$module-$(VERSION).pom -O debian/poms/lucene-$$module.pom.xml ; \
+	done
